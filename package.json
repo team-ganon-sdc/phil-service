@@ -15,9 +15,10 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mongoose": ">=5.7.5",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "mongoose": ">=5.7.5"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
