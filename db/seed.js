@@ -6,7 +6,7 @@ var fakeData = [];
 
 for (var i = 1; i <= 100; i++) {
   fakeData.push({
-    _id: i,
+    id: i,
     appName: faker.random.word(),
     appLogo: faker.image.imageUrl(),
     company: faker.company.companyName(),
@@ -16,8 +16,7 @@ for (var i = 1; i <= 100; i++) {
 }
 
 const insertFakeData = function() {
-  App.create(fakeData)
-    .then(() => db.disconnect());
+  App.create(fakeData);
 };
 
 insertFakeData();
