@@ -1,4 +1,5 @@
 import React from 'react';
+import AppCard from './AppCard.jsx';
 
 class App extends React.Component {
   render() {

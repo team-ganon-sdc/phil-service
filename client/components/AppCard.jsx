@@ -1,11 +1,12 @@
 import React from 'react';
+const faker = require('faker');
 
 class AppCard extends React.Component {
   render() {
     return (
       <div className="AppCard">
         <div className="AppLogo">
-          <img src="" alt=""></img>
+          <img src={faker.image.imageUrl()}/>
         </div>
         <div className="AppInfo">
           <div className="header">
@@ -19,3 +20,5 @@ class AppCard extends React.Component {
     );
   }
 }
+
+export default AppCard;
