@@ -5,8 +5,12 @@ import Header from './Header.jsx';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="wholeComponent">
         <Header />
+        <AppCard />
+        <AppCard />
+        <AppCard />
+        <AppCard />
         <AppCard />
       </div>
     );
