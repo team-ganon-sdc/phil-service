@@ -4,7 +4,7 @@ import AppCard from './AppCard.jsx';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="wholeComponent">
         <h2>Similar</h2>
         <button>See more</button>
         <AppCard />
