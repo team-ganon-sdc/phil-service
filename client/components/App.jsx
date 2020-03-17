@@ -8,6 +8,11 @@ class App extends React.Component {
         <h2>Similar</h2>
         <button>See more</button>
         <AppCard />
+        <AppCard />
+        <AppCard />
+        <AppCard />
+        <AppCard />
+
       </div>
     );
   }
