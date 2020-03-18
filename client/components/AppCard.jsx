@@ -19,18 +19,9 @@ class AppCard extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
       <div className="appCard">
         <AppLogo />
         <AppInfo />
-=======
-      <div>
-        <img src={faker.image.imageUrl()}/>
-        <div>App name goes here</div>
-        <div>App company goes here</div>
-        <div>App description goes here</div>
-        <div>App rating goes here</div>
->>>>>>> 55d4c7684fd5f18092cfe25fa249463757db702c
       </div>
     );
   }
