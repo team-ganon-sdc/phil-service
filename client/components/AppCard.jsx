@@ -14,7 +14,7 @@ class AppCard extends React.Component {
   }
 
   componentDidMount() {
-    const request = $.get('/api/apps', (data) => console.log(data));
+    $.get('/api/apps', (data) => console.log(data));
   }
 
   render() {
