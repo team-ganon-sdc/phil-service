@@ -1,21 +1,27 @@
 import React from 'react';
+import AppLogo from './AppLogo.jsx';
+import AppInfo from './AppInfo.jsx';
 const faker = require('faker');
+const $ = require('jquery');
+
 
 class AppCard extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      apps: null
+    };
+  }
+
+  componentDidMount() {
+    const request = $.get('/api/apps', (data) => console.log(data));
+  }
+
   render() {
     return (
-      <div className="AppCard">
-        <div className="AppLogo">
-          <img src={faker.image.imageUrl()}/>
-        </div>
-        <div className="AppInfo">
-          <div className="header">
-            <h1 className="AppName">Snapchat</h1>
-            <p className="Company">Snap, Inc.</p>
-          </div>
-          <div className="Description">Description goes here</div>
-          <div className="Rating">Rating goes here</div>
-        </div>
+      <div className="appCard">
+        <AppLogo />
+        <AppInfo />
       </div>
     );
   }

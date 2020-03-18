@@ -1,5 +1,5 @@
 import React from 'react';
-import AppCard from './AppCard.jsx';
+import AppCards from './AppCards.jsx';
 import Header from './Header.jsx';
 
 class App extends React.Component {
@@ -7,11 +7,7 @@ class App extends React.Component {
     return (
       <div className="wholeComponent">
         <Header />
-        <AppCard />
-        <AppCard />
-        <AppCard />
-        <AppCard />
-        <AppCard />
+        <AppCards />
       </div>
     );
   }
