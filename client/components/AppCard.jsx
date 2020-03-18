@@ -4,18 +4,12 @@ const faker = require('faker');
 class AppCard extends React.Component {
   render() {
     return (
-      <div className="AppCard">
-        <div className="AppLogo">
-          <img src={faker.image.imageUrl()}/>
-        </div>
-        <div className="AppInfo">
-          <div className="header">
-            <h1 className="AppName">Snapchat</h1>
-            <p className="Company">Snap, Inc.</p>
-          </div>
-          <div className="Description">Description goes here</div>
-          <div className="Rating">Rating goes here</div>
-        </div>
+      <div>
+        <img src={faker.image.imageUrl()}/>
+        <div>App name goes here</div>
+        <div>App company goes here</div>
+        <div>App description goes here</div>
+        <div>App rating goes here</div>
       </div>
     );
   }
