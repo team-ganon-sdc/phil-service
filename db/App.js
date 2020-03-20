@@ -4,12 +4,12 @@ const db = require('./index.js');
 const Schema = mongoose.Schema;
 
 const appSchema = new Schema({
-  id: Number,
-  appName: String,
-  appLogo: String,
+  _id: Number,
+  name: String,
+  logo: String,
   company: String,
-  appRating: Number,
-  appDescription: String
+  rating: Number,
+  description: String
 });
 
 const App = mongoose.model('App', appSchema);

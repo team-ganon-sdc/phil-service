@@ -1,18 +1,16 @@
 import React from 'react';
 
-class AppInfo extends React.Component {
-  render() {
-    return (
-      <div className="col-6 right-side">
-        <div className="appInfo">
-          <p className="appName">Snapchat</p>
-          <p className="company">Snap, Inc.</p>
-          <p className="description">Description goes here</p>
-        </div>
-        <div className="rating">Rating goes here</div>
+const AppInfo = function(props) {
+  return (
+    <div className="col-6 right-side">
+      <div className="appInfo">
+        <p className="appName">{props.app.name}</p>
+        <p className="company">{props.app.company}</p>
+        <p className="description">{props.app.description}</p>
       </div>
-    );
-  }
-}
+      <div className="rating">{props.app.rating}</div>
+    </div>
+  );
+};
 
 export default AppInfo;

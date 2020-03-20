@@ -8,20 +8,13 @@ const $ = require('jquery');
 class AppCard extends React.Component {
   constructor() {
     super();
-    this.state = {
-      apps: null
-    };
-  }
-
-  componentDidMount() {
-    $.get('/api/apps', (data) => this.setState({apps: data}));
   }
 
   render() {
     return (
-      <div className="appCard row align-items-center">
-        <AppLogo />
-        <AppInfo />
+      <div className="appCard row">
+        <AppLogo logoUrl={this.props.app.logo}/>
+        <AppInfo app={this.props.app}/>
       </div>
     );
   }

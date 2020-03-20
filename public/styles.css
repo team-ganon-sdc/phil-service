@@ -11,9 +11,11 @@ button {
   float: right;
 }
 
-.container {
-
+.container-fluid {
   margin: 4px;
+}
+.module {
+  border: 3px solid mediumslateblue;
 }
 
 .row {
@@ -38,12 +40,17 @@ button {
   border: 1px solid black;
   width: 340px;
   height: 170px;
-  background-color: white
+  background-color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .appLogo {
   text-align: center;
   background-color: red;
+  display: block;
+  margin: auto
+
 }
 
 .appInfo {

@@ -9,12 +9,12 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/api/apps', (req, res) => {
-  App.find({id: 1}, (err, apps) => {
+  App.find({}, (err, apps) => {
     if (err) {
       console.log('hey there was an error');
     }
     res.send(apps);
-  });
+  }).limit(5);
 });
 
 app.listen(port, () => console.log(`Similar Component listening on port ${port}!`));
