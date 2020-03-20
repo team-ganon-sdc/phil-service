@@ -14,12 +14,12 @@ class AppCard extends React.Component {
   }
 
   componentDidMount() {
-    $.get('/api/apps', (data) => console.log(data));
+    $.get('/api/apps', (data) => this.setState({apps: data}));
   }
 
   render() {
     return (
-      <div className="appCard">
+      <div className="appCard row align-items-center">
         <AppLogo />
         <AppInfo />
       </div>

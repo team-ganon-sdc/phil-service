@@ -3,7 +3,10 @@ const faker = require('faker');
 
 const AppLogo = function(props) {
   return (
-    <img src={faker.image.imageUrl()}/>
+    <div className="col-6 appLogo">
+      <img src={faker.image.imageUrl()}/>
+    </div>
+
   );
 };
 

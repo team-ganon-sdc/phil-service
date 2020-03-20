@@ -4,12 +4,10 @@ import AppCard from './AppCard.jsx';
 class AppCards extends React.Component {
   render() {
     return (
-      <div>
-        <AppCard />
-        <AppCard />
-        <AppCard />
-        <AppCard />
-        <AppCard />
+      <div className="row">
+        <div className="col">
+          <AppCard />
+        </div>
       </div>
     );
   }

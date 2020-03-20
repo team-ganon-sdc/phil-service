@@ -3,12 +3,12 @@ import React from 'react';
 class AppInfo extends React.Component {
   render() {
     return (
-      <div className="appInfo">
-        <div className="nameAndCo">
-          <h1 className="appName">Snapchat</h1>
+      <div className="col-6 right-side">
+        <div className="appInfo">
+          <p className="appName">Snapchat</p>
           <p className="company">Snap, Inc.</p>
+          <p className="description">Description goes here</p>
         </div>
-        <div className="description">Description goes here</div>
         <div className="rating">Rating goes here</div>
       </div>
     );
