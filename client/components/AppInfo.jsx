@@ -2,11 +2,11 @@ import React from 'react';
 
 const AppInfo = function(props) {
   return (
-    <div className="col-6 right-side">
+    <div className="col right-side">
       <div className="appInfo">
-        <p className="appName">{props.app.name}</p>
-        <p className="company">{props.app.company}</p>
-        <p className="description">{props.app.description}</p>
+        <p className="appName mb-0">{props.app.name}</p>
+        <p className="company mb-0">{props.app.company}</p>
+        <p className="description mt-9 mb-0">{props.app.description}</p>
       </div>
       <div className="rating">{props.app.rating}</div>
     </div>

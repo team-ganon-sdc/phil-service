@@ -24,7 +24,7 @@ class AppCards extends React.Component {
     });
 
     return (
-      <div className="row">
+      <div className="appCards row no-gutters">
         <div className="col">
           {apps}
         </div>

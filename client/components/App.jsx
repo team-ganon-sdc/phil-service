@@ -5,10 +5,11 @@ import Header from './Header.jsx';
 class App extends React.Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className=" similar-apps container-fluid">
         <Header />
         <AppCards />
       </div>
+
     );
   }
 }

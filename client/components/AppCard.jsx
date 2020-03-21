@@ -5,6 +5,7 @@ const faker = require('faker');
 const $ = require('jquery');
 
 
+
 class AppCard extends React.Component {
   constructor() {
     super();
@@ -12,7 +13,7 @@ class AppCard extends React.Component {
 
   render() {
     return (
-      <div className="appCard row">
+      <div className="appCard row no-gutters">
         <AppLogo logoUrl={this.props.app.logo}/>
         <AppInfo app={this.props.app}/>
       </div>
@@ -21,3 +22,5 @@ class AppCard extends React.Component {
 }
 
 export default AppCard;
+
+
