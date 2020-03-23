@@ -5,6 +5,7 @@
 
 .similar-apps {
   background-color: whitesmoke;
+  padding-top: 20px;
 }
 
 .header {
@@ -52,6 +53,7 @@
 .seemore-btn:hover {
   background-color: #8bc34a;
   box-shadow: inset 0 -2px 0 rgba(0,0,0,0.27);
+  transition: 0.25s;
 }
 
 .appCards {

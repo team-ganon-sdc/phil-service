@@ -5,18 +5,23 @@ import {TiStarOutline} from 'react-icons/ti';
 
 const Stars = function(props) {
 
-  const rating = props.rating;
-  var stars = [];
+  var starz = [];
 
+  for (var i = 0; i < Math.floor(props.rating); i++) {
+    starz.push(<TiStarFullOutline />);
+  }
 
+  if (props.rating % 1 !== 0) {
+    starz.push(<TiStarHalfOutline/>);
+  }
+
+  while (starz.length !== 5) {
+    starz.push(<TiStarOutline/>);
+  }
 
   return (
     <span>
-      <TiStarFullOutline />
-      <TiStarFullOutline />
-      <TiStarFullOutline />
-      <TiStarFullOutline />
-      <TiStarFullOutline />
+      {starz}
     </span>
   );
 };
