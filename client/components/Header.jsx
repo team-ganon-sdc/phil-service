@@ -3,8 +3,8 @@ import React from 'react';
 const Header = function() {
   return (
     <div className="header row no-gutters">
-      <div className="similar col"><h2>Similar</h2></div>
-      <div className="seeMore col"><button className='btn btn-success'>See more</button></div>
+      <div className="similar col"><div className="similar">Similar</div></div>
+      <div className="btn-col col"><button className='seemore-btn'>See more</button></div>
     </div>
   );
 };

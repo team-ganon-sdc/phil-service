@@ -1,4 +1,5 @@
 import React from 'react';
+import Stars from './Stars.jsx';
 
 const AppInfo = function(props) {
   return (
@@ -8,7 +9,7 @@ const AppInfo = function(props) {
         <p className="company mb-0">{props.app.company}</p>
         <p className="description mt-9 mb-0">{props.app.description}</p>
       </div>
-      <div className="rating">{props.app.rating}</div>
+      <div className="rating"><Stars rating={props.rating}/></div>
     </div>
   );
 };
