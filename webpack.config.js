@@ -7,13 +7,18 @@ module.exports = {
     path: path.resolve(__dirname, './public/dist')
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'env']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react'
+            ]
+          }
         }
       }
     ]
