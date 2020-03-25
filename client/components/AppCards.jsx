@@ -11,7 +11,7 @@ class AppCards extends React.Component {
   }
 
   componentDidMount() {
-    $.get('/api/apps', data => {
+    $.get('http://localhost:3001/api/apps', data => {
       this.setState({apps: data});
     });
 
