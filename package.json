@@ -16,10 +16,12 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
+    "body-parser": "~1.19.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
-    "mongoose": ">=5.7.5",
+    "mongoose": "",
+    "nodemon": "~2.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-icons": "^3.9.0"
