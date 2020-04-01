@@ -15,25 +15,25 @@ app.use(function(req, res, next) {
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.get('/api/apps', (req, res) => {
-  App.find({}, (err, apps) => {
-    if (err) {
-      console.log('hey  there was an error');
-    }
-    res.send(apps);
-  }).limit(5);
-});
+// app.get('/api/apps', (req, res) => {
+//   App.find({}, (err, apps) => {
+//     if (err) {
+//       console.log('hey  there was an error');
+//     }
+//     res.send(apps);
+//   }).limit(5);
+// });
 
 app.get('/api/apps/:id', (req, res) => {
   App.findById(req.params.id)
     .then(result => res.json(result))
     .catch(e => res.json('Could not find'));
-
 });
 
 app.post('/api/apps', (req, res) => {
   let newApp = new App({
     _id: req.body._id,
+    relatedAppId: req.body.relatedAppId,
     name: req.body.name,
     logo: req.body.logo,
     company: req.body.company,
