@@ -11,7 +11,8 @@ class AppCards extends React.Component {
   }
 
   componentDidMount() {
-    $.get('http://localhost:3001/api/apps', data => {
+    let endPoint = window.location.href.split('=');
+    $.get(`http://localhost:3001/api/apps/${endPoint[1]}`, data => {
       this.setState({apps: data});
     });
 
