@@ -10,9 +10,7 @@ There are 5 total different REST api calls on this express server.
 
 ## #GET
 
-> '/api/apps' returns 5 similar apps.
-
-> '/api/apps/:id' return specified similar app by Id
+> '/api/apps/:id' return app document which has related apps field.
 
 ## POST
 
@@ -23,6 +21,7 @@ There are 5 total different REST api calls on this express server.
 > Only the _id property is required in the Body of the request in JSON format. See below for full schema.
 
 > - _id: Number,
+> - relatedAppId: [{id: Number}],
 >- name: String,
 >- logo: Photo_Url, <-- From S3
 >- company: String,
