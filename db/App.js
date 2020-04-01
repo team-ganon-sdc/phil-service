@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 const appSchema = new Schema({
   _id: Number,
+  relatedAppId: [{id: Number}],
   name: String,
   logo: String,
   company: String,
