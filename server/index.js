@@ -24,6 +24,13 @@ app.get('/api/apps', (req, res) => {
   }).limit(5);
 });
 
+app.get('/api/apps/:id', (req, res) => {
+  App.findById(req.params.id)
+    .then(result => res.json(result))
+    .catch(e => res.json('Could not find'));
+
+});
+
 app.post('/api/apps', (req, res) => {
   let newApp = new App({
     _id: req.body._id,
@@ -36,6 +43,18 @@ app.post('/api/apps', (req, res) => {
   App.create(newApp)
     .then(result => res.json(result))
     .catch(e => res.json(e));
+});
+
+app.put('/api/apps/:id', (req, res) => {
+  App.findOneAndUpdate({_id: req.params.id}, req.body)
+    .then(result => res.json(result))
+    .catch(e => res.json(e));
+});
+
+app.delete('/api/apps/:id', (req, res) => {
+  App.findByIdAndDelete(req.params.id)
+    .then(result => res.json(result))
+    .catch(e => res.json('There was an error'));
 });
 
 
