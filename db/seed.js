@@ -4,9 +4,10 @@ const db = require('./index.js');
 
 var fakeData = [];
 
-for (var i = 1; i <= 100; i++) {
+for (var i = 1; i <= 5; i++) {
   fakeData.push({
     _id: i,
+    relatedAppId: [{id: i + 1}],
     name: faker.random.word(),
     logo: faker.image.imageUrl(),
     company: faker.company.companyName(),
