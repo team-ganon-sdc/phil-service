@@ -16,7 +16,7 @@ There are 5 total different REST api calls on this express server.
 
 > '/api/apps/:id'
 
-> Adds a similar app to the apps collection.
+> Adds an app to the apps collection.
 
 > Only the _id property is required in the Body of the request in JSON format. See below for full schema.
 
