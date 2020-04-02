@@ -1,4 +1,5 @@
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const fs = require('fs')
 
 let photoUrls = [];
 for (let i = 1; i <= 100; i++ ) {
@@ -43,12 +44,16 @@ const seed = (start, end, fileName) => {
   csvWriter.writeRecords(rows)
     .then(() => {
       console.log(`Done with ${start} to ${end}`);
+
     });
 };
 
 seed(1, 500000, 1);
+
  seed(500001, 1000000, 2);
+
 seed(1000001, 1500000, 3);
+
 seed(1500001, 2000000, 4);
 seed(2000001, 2500000, 5);
 seed(2500001, 3000000, 6);
