@@ -25,7 +25,7 @@ app.get('/', (req, res) => res.send('Hello World!'));
 // });
 
 app.get('/api/apps/:id', (req, res) => {
-  App.findById(req.params.id)
+  App.find({_id: req.params.id})
     .then(result => res.json(result))
     .catch(e => res.json('Could not find'));
 });
