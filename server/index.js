@@ -45,7 +45,15 @@ pool.connect()
 //     .catch(e => res.json('Could not find'));
 // });
 
-app.post('/api/apps', (req, res) => {
+app.get('/api/apps/:id', (req, res) => {
+  // eslint-disable-next-line quotes
+  let query = `select * from allapps WHERE appid = (select relatedappid[1] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[2] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[3] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[4] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[5] from allapps where appid = ${req.params.id})`;
+  pool.query(query)
+    .then(results => res.json(results.rows))
+    .catch(e => res.json(e));
+});
+
+app.post('/api/apps/:id', (req, res) => {
   // let newApp = new App({
   //   _id: req.body._id,
   //   relatedAppId: req.body.relatedAppId,
@@ -56,10 +64,12 @@ app.post('/api/apps', (req, res) => {
   //   description: req.body.description
   // });
   // eslint-disable-next-line quotes
-  let query = `INSERT INTO allApps(appid, relatedappid, name, logo, company, rating,   description) VALUES(1, '{2,3}', 'phil', 'logo!', 'phils company', 10, 'this is the description')`;
+
+  //needs to be converted to get off json body
+  let query = `INSERT INTO allApps(appid, relatedappid, name, logo, company, rating,   description) VALUES(${req.params.id}, '{1,2,3,4,5}', 'phil', 'logo!', 'phils company', 10, 'this is the description')`;
   pool.query(query)
   .then(() => console.log('inserted'))
-  .catch(e => console.log(e))
+  .catch(e => console.log(e));
 });
 
 
