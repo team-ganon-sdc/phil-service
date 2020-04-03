@@ -21,7 +21,7 @@ class AppCards extends React.Component {
   render() {
 
     const apps = this.state.apps.map(app => {
-      return <AppCard app={app} key={app._id}/>;
+      return <AppCard app={app} key={app.appid}/>;
     });
 
     return (
