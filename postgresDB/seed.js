@@ -11,7 +11,7 @@ const writeApps = fs.createWriteStream('data.csv');
 writeApps.write('appid,relatedappid,name,logo,company,rating,description\n', 'utf8');
 
 function seed(writer, encoding, callback) {
-  let i = 10;
+  let i = 10000000;
   let id = 0;
   function write() {
     let ok = true;
