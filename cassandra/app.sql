@@ -1,4 +1,8 @@
 
+-- create keyspace allApps with replication = {'class':'SimpleStrategy', 'replication_factor': 1};
+
+-- use allapps;
+
 CREATE TABLE allApps (
   appid int PRIMARY KEY,
   relatedappid list<int>,
@@ -9,8 +13,13 @@ CREATE TABLE allApps (
   description text
 );
 
-
-uuid?
+--cassandra does not do join queries so dont bother
+-- CREATE TABLE similar (
+--   id int,
+--   appid int,
+--   relatedapp int,
+--   PRIMARY KEY (id, appid, relatedapp)
+-- )
 
 const appSchema = new Schema({
   _id: Number,
