@@ -21,12 +21,8 @@ CREATE TABLE allApps (
 --   PRIMARY KEY (id, appid, relatedapp)
 -- )
 
-const appSchema = new Schema({
-  _id: Number,
-  relatedAppId: [{id: Number}],
-  name: String,
-  logo: String,
-  company: String,
-  rating: Number,
-  description: String
-});
+CREATE INDEX allapps_appid ON allapps.allapps (relatedappid);
+
+select relatedappid from allapps where appid = 9999995
+
+select appid, name, logo, company, rating, description from allapps where appid = 9999995
