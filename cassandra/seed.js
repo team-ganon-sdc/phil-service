@@ -45,3 +45,5 @@ seed(writeApps, 'utf-8', () => {
 });
 
 // COPY allapps FROM '/Users/avarousu/Desktop/Galvanize/similar-component/cassandraData.csv' WITH DELIMITER ='|' AND HEADER = TRUE;
+
+// `select appid, name, logo, company, rating, description from allapps WHERE appid = (select relatedappid[1] from allapps where appid = 1) or appid = (select relatedappid[2] from allapps where appid = 1) or appid = (select relatedappid[3] from allapps where appid = 1) or appid = (select relatedappid[4] from allapps where appid = 1) or appid = (select relatedappid[5] from allapps where appid = 1)`;
