@@ -1,4 +1,3 @@
-
 CREATE TABLE allApps (
   appid integer UNIQUE PRIMARY KEY,
   relatedappid integer ARRAY[5],
@@ -9,12 +8,4 @@ CREATE TABLE allApps (
   description varchar(250)
 );
 
-const appSchema = new Schema({
-  _id: Number,
-  relatedAppId: [{id: Number}],
-  name: String,
-  logo: String,
-  company: String,
-  rating: Number,
-  description: String
-});
+create index allapps_relatedappid  ON allapps(relatedappid);
