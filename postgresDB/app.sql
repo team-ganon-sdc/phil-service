@@ -9,3 +9,5 @@ CREATE TABLE allApps (
 );
 
 create index allapps_relatedappid  ON allapps(relatedappid);
+
+explain analyze select appid, name, logo, company, rating, description from allapps WHERE appid = (select relatedappid[1] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[2] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[3] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[4] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[5] from allapps where appid = ${req.params.id})
