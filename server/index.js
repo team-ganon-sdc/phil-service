@@ -30,7 +30,7 @@ client.connect(function (err) {
 
 const get = id => {
   return new Promise((resolve, reject) => {
-    const query = `select * from allapps where appid = ${id}`;
+    const query = `select appid, name, logo, company, rating, description from allapps where appid = ${id}`;
     client.execute(query)
       .then(results => resolve(results))
       .catch(e => reject(e));
