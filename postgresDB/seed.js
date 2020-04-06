@@ -44,4 +44,3 @@ seed(writeApps, 'utf-8', () => {
   writeApps.end();
 });
 
-// COPY allapps (appid, relatedappid, name, logo, company, rating, description) FROM '/Users/avarousu/Desktop/Galvanize/similar-component/postgresData.csv' CSV HEADER DELIMITER '|';
