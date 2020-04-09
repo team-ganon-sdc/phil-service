@@ -4,7 +4,7 @@ config:
     - duration: 5
       arrivalRate: 1000
       payload:
-        path: "./artilleryData.csv"
+        path: "./postgresData.csv"
         fields:
           - "appid"
           - "relatedappid"
