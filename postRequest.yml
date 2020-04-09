@@ -1,0 +1,30 @@
+config:
+  target: 'http://localhost:3001'
+  phases:
+    - duration: 5
+      arrivalRate: 1000
+      payload:
+        path: "./artilleryData.csv"
+        fields:
+          - "appid"
+          - "relatedappid"
+          - "name"
+          - "logo"
+          - "company"
+          - "rating"
+          - "description"
+        order: sequence
+        skipHeader: true
+        delimeter: "|"
+scenarios:
+  - flow:
+    - post:
+        url: "/api/apps"
+        json:
+          appid: "{{appid}}"
+          relatedappid: "{{relatedappid}}"
+          name: "{{name}}"
+          logo: "{{logo}}"
+          company: "{{company}}"
+          rating: "{{rating}}"
+          description: "{{description}}"
