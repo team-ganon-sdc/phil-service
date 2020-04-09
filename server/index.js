@@ -27,7 +27,6 @@ pool.connect()
   .then(() => console.log('postgres connected at 5432'))
   .catch(e => console.log('postgres connection error'));
 
-
 app.get('/api/apps/:id', (req, res) => {
   // eslint-disable-next-line quotes
   let query = `select appid, name, logo, company, rating, description from allapps WHERE appid = (select relatedappid[1] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[2] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[3] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[4] from allapps where appid = ${req.params.id}) or appid = (select relatedappid[5] from allapps where appid = ${req.params.id})`;
