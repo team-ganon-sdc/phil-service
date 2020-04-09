@@ -37,11 +37,12 @@ app.get('/api/apps/:id', (req, res) => {
     .catch(e => res.json(e));
 });
 
-app.post('/api/apps/:id', (req, res) => {
-  let query = `INSERT INTO allApps (appid, relatedappid, name, logo, company, rating,   description) VALUES (${req.params.id}, '${req.body.relatedappid}', '${req.body.name}', '${req.body.logo}', '${req.body.company}', ${req.body.rating}, '${req.body.description}')`;
+app.post('/api/apps', (req, res) => {
+  let query = `INSERT INTO allApps (appid, relatedappid, name, logo, company, rating,   description) VALUES (${req.body.appid}, '${req.body.relatedappid}', '${req.body.name}', '${req.body.logo}', '${req.body.company}', ${req.body.rating}, '${req.body.description}')`;
   pool.query(query)
     .then(result => res.json('1 row inserted'))
     .catch(e => res.json(e));
+
 });
 
 app.listen(port, () => console.log(`Similar Component listening on port ${port}!`));
