@@ -1,0 +1,32 @@
+config:
+  target: 'http://localhost:3001'
+  processor: "./postProcessor.js"
+  phases:
+    - duration: 5
+      arrivalRate: 1000
+      payload:
+        path: "./postgresData.csv"
+        fields:
+          - "appid"
+          - "relatedappid"
+          - "name"
+          - "logo"
+          - "company"
+          - "rating"
+          - "description"
+        order: sequence
+        skipHeader: true
+        delimeter: "|"
+scenarios:
+  - flow:
+    - function: "post"
+    - post:
+        url: "/api/apps"
+        json:
+          appid: "{{appid}}"
+          relatedappid: "{{relatedappid}}"
+          name: "{{name}}"
+          logo: "{{logo}}"
+          company: "{{company}}"
+          rating: "{{rating}}"
+          description: "{{description}}"
