@@ -1,0 +1,12 @@
+config:
+  target: 'http://localhost:3001'
+  processor: "./postProcessor.js"
+  phases:
+    - duration: 10
+      arrivalRate: 1000
+scenarios:
+  - flow:
+    - function: "get"
+    - get:
+        url: "/api/apps/{{id}}"
+
