@@ -1,22 +1,9 @@
 config:
   target: 'http://localhost:3001'
-  processor: "./postProcessor.js"
+  processor: "./processors.js"
   phases:
     - duration: 5
       arrivalRate: 1000
-      payload:
-        path: "./postgresData.csv"
-        fields:
-          - "appid"
-          - "relatedappid"
-          - "name"
-          - "logo"
-          - "company"
-          - "rating"
-          - "description"
-        order: sequence
-        skipHeader: true
-        delimeter: "|"
 scenarios:
   - flow:
     - function: "post"
