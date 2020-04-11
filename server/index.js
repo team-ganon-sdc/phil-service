@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const { Pool } = require('pg');
-const port = 3001;
+
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
@@ -44,6 +44,10 @@ app.post('/api/apps', (req, res) => {
     .catch(e => res.json(e));
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3001;
+}
+
 app.listen(port, () => console.log(`Similar Component listening on port ${port}!`));
 
-// INSERT INTO allApps(appid, relatedappid, name, logo, company, rating, description) VALUES(10000001, '{ 1, 2, 3, 4, 5 }', 'phil', 'logo', 'company', 5, 'descriptonadf')
