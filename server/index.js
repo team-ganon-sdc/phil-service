@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const { Pool } = require('pg');
-var cors = require('cors')
+var cors = require('cors');
 
 
 app.use(express.static(path.join(__dirname, '../public')));
