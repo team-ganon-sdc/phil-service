@@ -16,9 +16,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+
+
 const pool = new Pool({
   user: 'avarousu',
-  host: 'localhost',
+  host: '34.209.180.241',
   database: 'app',
   password: '',
   port: 5432,
@@ -26,7 +28,7 @@ const pool = new Pool({
 
 pool.connect()
   .then(() => console.log('postgres connected at 5432'))
-  .catch(e => console.log('postgres connection error'));
+  .catch(e => console.log(e));
 
 
 app.get('/api/apps/:id', (req, res) => {
