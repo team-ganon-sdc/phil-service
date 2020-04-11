@@ -12,7 +12,7 @@ class AppCards extends React.Component {
 
   componentDidMount() {
     let endPoint = window.location.href.split('=');
-    $.get(`http://50.112.86.134:3001/api/apps/${endPoint[1]}`, data => {
+    $.get(`http://54.212.36.16:3001/api/apps/${endPoint[1]}`, data => {
       console.log(data)
       this.setState({apps: data});
     });
