@@ -1,12 +1,9 @@
-
 require('newrelic');
-
 const express = require('express');
 const app = express();
 const path = require('path');
 const { Pool } = require('pg');
 var cors = require('cors');
-
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
@@ -17,8 +14,6 @@ app.use(cors());
 //   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 //   next();
 // });
-
-
 
 const pool = new Pool({
   user: 'postgres',
@@ -33,8 +28,8 @@ pool.connect()
   .catch(e => console.log(e));
 
 
-app.get('/loaderio-939f6b204a8162a1afadfc0dc4474eae.txt', (req, res) => {
-  res.sendFile(path.join(__dirname, '../loaderio-939f6b204a8162a1afadfc0dc4474eae.txt'));
+app.get('/loaderio-c3e9fbd9398f147ba05ed31c31556263.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, '../loaderio-c3e9fbd9398f147ba05ed31c31556263.txt'));
 });
 
 app.get('/api/apps/:id', (req, res) => {
